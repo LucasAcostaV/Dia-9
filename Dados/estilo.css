@@ -1,0 +1,23 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos para las imágenes */
+.contenedor img {
+    width: 100px; /* Modificar el tamaño de las imágenes */
+    height: auto; /* Mantener la proporción de aspecto */
+    margin: 10px; /* Espacio entre las imágenes */
+    position: relative;
+    top: 100px;
+}
+
+#tirarBtn {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 50%; /* Posicionado en el centro horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrar horizontalmente */
+    font-size: 45px;
+}
