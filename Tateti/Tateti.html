@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta-te-ti</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <div id="tablero">
+        <!-- Celdas del tablero. Se llama a la función posicionDelTablero() cuando se hace clic -->
+        <div class="celda" onclick="posicionDelTablero(0)"></div>
+        <div class="celda" onclick="posicionDelTablero(1)"></div>
+        <div class="celda" onclick="posicionDelTablero(2)"></div>
+        <div class="celda" onclick="posicionDelTablero(3)"></div>
+        <div class="celda" onclick="posicionDelTablero(4)"></div>
+        <div class="celda" onclick="posicionDelTablero(5)"></div>
+        <div class="celda" onclick="posicionDelTablero(6)"></div>
+        <div class="celda" onclick="posicionDelTablero(7)"></div>
+        <div class="celda" onclick="posicionDelTablero(8)"></div>
+    </div>
+    <div id="resultado"></div> <!-- Mostrará el resultado del juego -->
+    <button onclick="volverAJugar()">Jugar de nuevo</button> <!-- Botón para reiniciar el juego -->
+    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

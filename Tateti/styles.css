@@ -1,0 +1,25 @@
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Define 3 columnas de 100px cada una */
+    grid-template-rows: repeat(3, 100px); /* Define 3 filas de 100px cada una */
+    gap: 2px; /* Espacio entre las celdas */
+    background-color: #ddd; /* Color de fondo del tablero */
+    margin-bottom: 10px; /* Margen inferior para separar el tablero del resto del contenido */
+}
+
+.celda {
+    width: 100px; /* Ancho de la celda */
+    height: 100px; /* Altura de la celda */
+    background-color: #fff; /* Color de fondo de la celda */
+    border: 1px solid #888; /* Borde de la celda */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+    font-size: 2em; /* Tamaño de fuente del marcador */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre la celda */
+}
+
+#resultado {
+    font-size: 2em; /* Tamaño de fuente del resultado */
+    margin-bottom: 10px; /* Margen inferior para separar el resultado del tablero */
+}
