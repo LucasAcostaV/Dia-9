@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /*<!-- Establece el tipo de fuente para el cuerpo del documento -->*/
+        }
+        .calculator {
+            width: 255px;  /*<!-- Establece el ancho del contenedor de la calculadora -->*/
+            margin: 0 auto;     /*<!-- Centra el contenedor horizontalmente en la página -->*/ 
+            border: 1px solid #ccc;     /*<!-- Establece un borde sólido de 1px con color gris claro -->*/
+            border-radius: 10px;     /*<!-- Establece un borde redondeado -->*/
+            padding: 10px;      /*<!-- Agrega un relleno interno de 10px alrededor del contenedor -->*/
+            height: 400px;
+        }
+        .calculator input[type="button"] {
+            width: 50px;    /*<!-- Establece el ancho de los botones de la calculadora -->*/
+            height: 50px;   /*<!-- Establece la altura de los botones de la calculadora -->*/
+            margin: 5px;    /*<!-- Establece el margen de 5px entre los botones -->*/
+            font-size: 20px;    /*<!-- Establece el tamaño de fuente de los botones -->*/
+            border: 1px solid #ccc; /*<!-- Establece un borde sólido de 1px con color gris claro -->*/
+            border-radius: 5px;     /*<!-- Establece un borde redondeado para los botones -->*/
+            cursor: pointer;    /*<!-- Cambia el cursor a una mano cuando se pasa sobre los botones -->*/
+        }
+        .calculator input[type="text"] {
+            width: 93%;    /*<!-- Establece el ancho del campo de entrada al 100% del contenedor -->*/
+            height: 60px;   /*<!-- Establece la altura del campo de entrada -->*/
+            font-size: 40px;    /*<!-- Establece el tamaño de fuente del campo de entrada -->*/
+            text-align: right;  /*<!-- Alinea el texto a la derecha dentro del campo de entrada -->*/
+            margin-bottom: 10px;    /*<!-- Agrega un margen inferior de 10px al campo de entrada -->*/
+            position: relative;
+            left: 5px;
+        }
+        .double-size {
+            height: 110px;
+            font-size: 30px;
+        }
+        #boton7, #boton8, #boton9{
+            position: relative;
+            top: -30px
+        }
+        #boton4, #boton5, #boton6{
+            position: relative;
+            top: -60px;
+        }
+        #boton1, #boton2, #boton3{
+            position: relative;
+            top: -90px;
+        }
+        #botonvacio{
+            position: relative;
+            top: -120px;
+        }
+        #boton0{
+            position: relative;
+            top: -143px;
+        }
+        #botonesigual {
+            position: relative;
+            top: -60px;
+            height: 110px;
+        }
+        #botonsuma{
+            position: relative;
+            height: 110px;
+            
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+<div class="calculator"><!-- Inicia el contenedor de la calculadora -->
+    <input type="text" id="display" readonly><!-- Campo de entrada para mostrar la expresión y el resultado -->
+    <!-- Botones numéricos y de operadores -->
+    <input type="button" value="/" onclick="addToDisplay('/')" class="boton" >
+    <input type="button" value="*" onclick="addToDisplay('*')" class="boton">
+    <input type="button" value="-" onclick="addToDisplay('-')" class="boton" >
+    <input type="button" value="C" onclick="clearDisplay()" class="boton" >
+    <br>
+    <input type="button" value="7" onclick="addToDisplay('7')"class="boton" id="boton7">
+    <input type="button" value="8" onclick="addToDisplay('8')"class="boton" id="boton8">
+    <input type="button" value="9" onclick="addToDisplay('9')"class="boton" id="boton9">
+    <input type="button" value="+" onclick="addToDisplay('+')" class="boton" id="botonsuma">
+    <br>
+    <input type="button" value="4" onclick="addToDisplay('4')"class="boton" id="boton4">
+    <input type="button" value="5" onclick="addToDisplay('5')"class="boton" id="boton5">
+    <input type="button" value="6" onclick="addToDisplay('6')"class="boton" id="boton6">
+    <br>
+    <input type="button" value="1" onclick="addToDisplay('1')"class="boton" id="boton1">
+    <input type="button" value="2" onclick="addToDisplay('2')"class="boton" id="boton2">
+    <input type="button" value="3" onclick="addToDisplay('3')"class="boton" id="boton3">
+    <!-- Botón de igual para calcular el resultado -->
+    <input type="button" value="=" onclick="calculate()" class="boton" id="botonesigual">
+    <br>
+    <input type="button" value="" onclick=""class="boton" id="botonvacio">
+    <input type="button" value="0" onclick="addtoDisplay('0')"class="boton" id="boton0">
+    <input type="button" value="" onclick=""class="boton" id="botonvacio">
+</div>
+
+<script>
+    function addToDisplay(value) {
+        document.getElementById('display').value += value; //<!-- Agrega el valor del botón al campo de entrada -->
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = ''; //<!-- Borra todo el contenido del campo de entrada -->
+    }
+
+    function calculate() {
+        var expression = document.getElementById('display').value; //<!-- Obtiene la expresión del campo de entrada -->
+        var result = eval(expression); //<!-- Evalúa la expresión y calcula el resultado -->
+        document.getElementById('display').value = result; //<!-- Muestra el resultado en el campo de entrada -->
+    }
+</script>
+
+</body>
+</html>
